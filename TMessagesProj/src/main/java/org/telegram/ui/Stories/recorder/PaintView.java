@@ -1082,7 +1082,7 @@ public class PaintView extends SizeNotifierFrameLayoutPhoto implements IPhotoPai
             keyboardAnimator = new AnimatorSet();
             final ArrayList<Animator> animators = new ArrayList<>();
             animators.add(ObjectAnimator.ofFloat(weightChooserView, View.TRANSLATION_Y, keyboardHeight > 0 ? Math.min(0, -keyboardHeight / 2f - dp(8)) : 0));
-            animators.add(ObjectAnimator.ofFloat(bottomLayout, View.TRANSLATION_Y, (keyboardHeight > 0 ? Math.min(0, -keyboardHeight + dp(40)) : 0)/* - (isColorListShown && keyboardVisible ? AndroidUtilities.dp(39) : 0)*/));
+            animators.add(ObjectAnimator.ofFloat(bottomLayout, View.TRANSLATION_Y, (keyboardHeight > 0 ? Math.min(0, -keyboardHeight + Math.max(dp(40), parent.getBottomPadding() - dp(16))) : 0)/* - (isColorListShown && keyboardVisible ? AndroidUtilities.dp(39) : 0)*/));
             animators.add(ObjectAnimator.ofFloat(tabsLayout, View.ALPHA, keyboardVisible ? 0f : 1f));
             animators.add(ObjectAnimator.ofFloat(doneButton, View.ALPHA, keyboardVisible && !isColorListShown ? 0f : 1f));
             animators.add(ObjectAnimator.ofFloat(cancelButton, View.ALPHA, keyboardVisible && !isColorListShown ? 0f : 1f));

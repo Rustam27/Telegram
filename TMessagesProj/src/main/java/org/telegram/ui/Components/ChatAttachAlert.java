@@ -3883,8 +3883,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 nextAttachLayout.setTranslationX(width);
                 if (currentAttachLayout instanceof ChatAttachAlertPhotoLayout) {
                     ChatAttachAlertPhotoLayout photoLayout = (ChatAttachAlertPhotoLayout) currentAttachLayout;
-                    if (photoLayout.cameraView != null) {
-                        photoLayout.cameraView.setVisibility(View.INVISIBLE);
+                    if (photoLayout.getCameraView() != null) {
+                        photoLayout.getCameraView().setVisibility(View.INVISIBLE);
                         photoLayout.cameraIcon.setVisibility(View.INVISIBLE);
                         photoLayout.cameraCell.setVisibility(View.VISIBLE);
                     }
@@ -3893,8 +3893,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 currentAttachLayout.setTranslationX(-width);
                 if (nextAttachLayout == photoLayout) {
                     ChatAttachAlertPhotoLayout photoLayout = (ChatAttachAlertPhotoLayout) nextAttachLayout;
-                    if (photoLayout.cameraView != null) {
-                        photoLayout.cameraView.setVisibility(View.VISIBLE);
+                    if (photoLayout.getCameraView() != null) {
+                        photoLayout.getCameraView().setVisibility(View.VISIBLE);
                         photoLayout.cameraIcon.setVisibility(View.VISIBLE);
                     }
                 }
